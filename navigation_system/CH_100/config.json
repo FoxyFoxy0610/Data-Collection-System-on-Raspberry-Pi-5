@@ -1,0 +1,16 @@
+{
+  "port": "/dev/ttyUSB0",
+  "baudrate": 115200,
+  "report_datatype": {
+    "imusol": true,
+    "gwsol": false,   
+    "id": false,
+    "acc": true,
+    "gyr": true,
+    "mag": true,
+    "euler": true,
+    "quat": false,
+    "imusol_raw": false,
+    "gwsol_raw": false
+  }
+}
