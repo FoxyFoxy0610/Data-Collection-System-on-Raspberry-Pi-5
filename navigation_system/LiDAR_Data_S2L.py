@@ -60,7 +60,7 @@ def save_scan_to_csv(scan_data):
         for item in filtered_data:
             writer.writerow(item)
     
-    print(f"✅ Sucessfully save the LiDAR data!")
+    print(f"Sucessfully save the LiDAR data!")
 
 try:
     for line in process.stdout:
