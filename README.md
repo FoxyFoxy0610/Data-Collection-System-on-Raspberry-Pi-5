@@ -3,3 +3,7 @@ This is the data collection system for simulating robotic platform including fol
 - **LiDAR:** RPI-LiDAR A1 / HOKUYO UST-05LX / RPI-LiDAR S2L  
 - **IMU:** CH-100 / GY91  
 - **RPI Camera (v2.1 / v3):** This section is in the folder "side view" with record and camera calibration.
+
+The programs in the folder "side_view" are major employed for fruit and flower detection, including:
+- **Distoration Collection** for calibratinng the wide-angle picture.
+- **Image Stitching** for establishing the array images to capture the whole tomato plants.
