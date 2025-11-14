@@ -7,3 +7,5 @@ This is the data collection system for simulating robotic platform including fol
 The programs in the folder "side_view" are major employed for fruit and flower detection, including:
 - **Distoration Collection** for calibratinng the wide-angle picture.
 - **Image Stitching** for establishing the array images to capture the whole tomato plants.
+
+The programs in the folder "remote_control" are the system for remote capturing system by MQTT and socket portocol.
