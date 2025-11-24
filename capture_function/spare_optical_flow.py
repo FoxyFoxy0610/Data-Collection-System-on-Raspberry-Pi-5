@@ -15,7 +15,7 @@ picam2.configure(picam2.create_preview_configuration(main={"size":(3280, 2464), 
 
 current_date = time.strftime('%Y-%m-%d', time.localtime())
 current_time = time.strftime('_%H-%M-%S', time.localtime())
-folder_path = f'./Optical_Flow_Result/{current_date}'
+folder_path = f'./optical_flow_result/{current_date}'
 os.makedirs(folder_path, exist_ok=True)
 output_video_path = folder_path + '/Spare_Optical_Flow_' + current_date + current_time + '.mp4'
 
