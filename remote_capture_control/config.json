@@ -1,0 +1,28 @@
+{
+    "device": {
+        "id": "CAM01",
+        "image_save_folder": "images"
+    },
+    "mqtt": {
+        "broker_ip": "10.238.180.144",
+        "port": 1883,
+        "topic_cmd": "camera/all/cmd",
+        "topic_status_prefix": "camera"
+    },
+    "server": {
+        "ip": "10.238.180.144",
+        "port": 8000
+    },
+    "servo": {
+        "uart_port": "/dev/serial0",
+        "baudrate": 38400,
+        "up_angle": 15,
+        "down_angle": 15,
+        "stabilize_time": 0.8
+    },
+    "calibration": {
+        "enable": true,
+        "npz_file_path": ".camera_calibration/camera_params_Wide.npz",
+        "crop_roi": true
+    }
+}
