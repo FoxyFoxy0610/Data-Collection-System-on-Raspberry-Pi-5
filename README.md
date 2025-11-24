@@ -8,7 +8,7 @@ The base source code of each sensor is in the **"sensor_source_code"**.
 The folder **"remote_capture_control"** is the package for the remote capture module which receiving the MQTT signal to control the capture function, then send it back to the server, and the fundamental communication programs are in **"remote_control"**.
 
 The programs in the folder **"capture_function"** are major employed for fruit and flower detection, including:
-- **Distoration Collection** for calibratinng the wide-angle picture.
-- **Image Stitching** for establishing the array images to capture the whole tomato plants.
+- **distoration_collection** for calibratinng the wide-angle picture.
+- **image_stitching** for establishing the array images to capture the whole tomato plants.
 
 The programs in the folder "remote_control" are the system for remote capturing system by MQTT and socket portocol.
