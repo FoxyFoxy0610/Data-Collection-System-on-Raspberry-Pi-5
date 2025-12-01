@@ -111,7 +111,10 @@ def parse_nmea(nmea_str):
 
             if record_requested:
                 RTK_data.append([lat, lon, fix_type, sat_num])
-                print("\n Saved current position.")
+                # print("\n Saved current position.")
+                current_count = len(RTK_data) - 1
+                print(f"[第 {current_count} 次紀錄] 儲存成功 | 緯度: {lat:.8f}, 經度: {lon:.8f}, 模式: {mode_str}, 衛星數: {sat_num}")
+
                 record_requested = False
     except pynmea2.ParseError:
         pass

@@ -74,7 +74,10 @@ def parse_nmea(nmea_str,num):
             # print(f"GGA({num}) - Lat: {round(lat,8)} | Lon: {round(lon,8)} | Mode: {fix_types.get(fix_type, 'Unknown')} | Satellite:{sat_num}     ", end="\r")
             if record_requested == True:
                 RTK_data.append([lat, lon, fix_types.get(fix_type, 'Unknown'), sat_num])
-                print("Save Successfully!!")
+                # print("Save Successfully!!")
+                current_count = len(RTK_data) - 1
+                print(f"[第 {current_count} 次紀錄] 儲存成功 | 緯度: {lat:.8f}, 經度: {lon:.8f}, 模式: {mode_str}, 衛星數: {sat_num}")
+
                 record_requested = False
 
             time.sleep(0.1)
@@ -120,7 +123,7 @@ def main():
                         sock.sendall((line + "\r\n").encode('ascii'))
                         num += 1
             
-                print(time.time() - start)
+                # print(time.time() - start)
 
             except socket.error as e:
                 print("\n[Socket Error]", e)
