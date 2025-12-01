@@ -66,7 +66,7 @@ def rtcm_thread(ser):
                 ser.write(data)
                 try:
                     sock.sendall((last_gga_line + "\r\n").encode('ascii')) # Resend GGA message to caster
-                    print("\n Sent GGA after RTCM.")
+                    # print("\n Sent GGA after RTCM.")
                 except Exception as e:
                     print(f"Failed to send GGA: {e}")
                     sock.close()
@@ -92,8 +92,6 @@ def parse_nmea(nmea_str):
 
     try:
         now = time.time()
-        if last_gga_time:
-            print(f"[GGA Interval] {now - last_gga_time:.3f} sec")
         last_gga_time = now
 
         msg = pynmea2.parse(nmea_str)
@@ -111,9 +109,8 @@ def parse_nmea(nmea_str):
 
             if record_requested:
                 RTK_data.append([lat, lon, fix_type, sat_num])
-                # print("\n Saved current position.")
                 current_count = len(RTK_data) - 1
-                print(f"[第 {current_count} 次紀錄] 儲存成功 | 緯度: {lat:.8f}, 經度: {lon:.8f}, 模式: {mode_str}, 衛星數: {sat_num}")
+                print(f"[NO. {current_count} Record] | Lat: {lat:.8f}, Long: {lon:.8f}, Mode: {fix_type}, Sat: {sat_num}")
 
                 record_requested = False
     except pynmea2.ParseError:
@@ -129,13 +126,13 @@ def uart_thread(ser):
 # ------------------ Keyboard Listening Thread ------------------
 def keyboard_listener():
     global record_requested
+    print("Push ""r"" to will record next GGA position.")
     while True:
         rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
         if rlist:
             key = sys.stdin.readline().strip()
             if key.lower() == 'r':
                 record_requested = True
-                print("\n Will record next GGA position.")
 
 # ------------------ Main Function ------------------
 def main():
